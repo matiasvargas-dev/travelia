@@ -31,7 +31,7 @@
             <div class="grid-masonry">
 
                 <article class="card-destino item-naturaleza">
-                    <img src="/assets/img/iguazu-selva.jpg" alt="Cataratas del Iguazu">
+                    <img src="../assets/img/iguazu-selva.jpg" alt="Cataratas del Iguazu">
                     <div class="overlay-info">
                         <h3>Cataratas del Iguazu</h3>
                         <p>Aventura en la selva</p>
@@ -39,7 +39,7 @@
                 </article>
 
                 <article class="card-destino item-cultural">
-                    <img src="/assets/img/japan-templo.jpg" alt="Templos en Japon">
+                    <img src="../assets/img/japan-templo.jpg" alt="Templos en Japon">
                     <div class="overlay-info">
                         <h3>Japon</h3>
                         <p>Tradicion y futuro</p>
@@ -47,7 +47,7 @@
                 </article>
 
                 <article class="card-destino item-playa">
-                    <img src="/assets/img/monaco-beach.jpg" alt="Costas de Monaco">
+                    <img src="../assets/img/monaco-beach.jpg" alt="Costas de Monaco">
                     <div class="overlay-info">
                         <h3>Monaco</h3>
                         <p>Lujo en el Mediterráneo</p>
@@ -101,12 +101,12 @@
 </body>
 
 <script>
-    fetch('/includes/header.html')
+    fetch('../includes/header.html')
         .then(response => response.text())
         .then(html => document.getElementById('header-contenedor').innerHTML = html)
         .catch(error => console.error('Error cargando header:', error));
 
-    fetch('/includes/footer.html')
+    fetch('../includes/footer.html')
         .then(response => response.text())
         .then(html => document.getElementById('footer-contenedor').innerHTML = html)
         .catch(error => console.error('Error cargando footer:', error));

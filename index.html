@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travelia</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <main>
         <section id="hero">
             <video autoplay muted loop playsinline class="video-fondo">
-                <source src="/assets/videos/japan-1.mp4" type="video/mp4">
+                <source src="./assets/videos/japan-1.mp4" type="video/mp4">
                 Tu navegador no soporto el formato de video.
             </video>
             <div class="hero-contenido">
@@ -32,24 +32,24 @@
             </div>
             <div class="contenedor-cards">
                 <article class="card">
-                    <img src="/assets/img/iguassus-mouth-arg.jpg" alt="Cataratas del Iguazu, maravilla natural">
+                    <img src="./assets/img/iguassus-mouth-arg.jpg" alt="Cataratas del Iguazu, maravilla natural">
                     <h3>Cataratas del Iguazu</h3>
                     <p>Naturaleza imponente y aventura en una de las maravillas del mundo.</p>
-                    <a href="/views/destinos.html">Ver paquete</a>
+                    <a href="./views/destinos.html">Ver paquete</a>
                 </article>
 
                 <article class="card">
-                    <img src="/assets/img/edo_tokyo-japan.jpg" alt="Paisaje urbano y tradicional en Japón">
+                    <img src="./assets/img/edo_tokyo-japan.jpg" alt="Paisaje urbano y tradicional en Japón">
                     <h3>Japon</h3>
                     <p>El equilibrio perfecto entre tecnologia futurista y tradiciones milenarias.</p>
-                    <a href="/views/destinos.html">Ver paquete</a>
+                    <a href="./views/destinos.html">Ver paquete</a>
                 </article>
 
                 <article class="card">
-                    <img src="/assets/img/monaco.jpg" alt="Vista panorámica de Mónaco">
+                    <img src="./assets/img/monaco.jpg" alt="Vista panorámica de Mónaco">
                     <h3>Monaco</h3>
                     <p>Lujo en el Mediterraneo y la adrenalina del circuito urbano de automovilismo.</p>
-                    <a href="/views/destinos.html">Ver paquete</a>
+                    <a href="./views/destinos.html">Ver paquete</a>
                 </article>
             </div>
 
@@ -87,12 +87,12 @@
 </body>
 
 <script>
-    fetch('/includes/header.html')
+    fetch('./includes/header.html')
         .then(response => response.text())
         .then(html => document.getElementById('header-contenedor').innerHTML = html)
         .catch(error => console.error('Error cargando header:', error));
 
-    fetch('/includes/footer.html')
+    fetch('./includes/footer.html')
         .then(response => response.text())
         .then(html => document.getElementById('footer-contenedor').innerHTML = html)
         .catch(error => console.error('Error cargando footer:', error));
