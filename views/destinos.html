@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -9,7 +9,22 @@
 </head>
 
 <body>
-    <div id="header-contenedor"></div>
+    <header>
+        <a href="../index.html">
+            <img src="../assets/img/logo1.png" alt="Logo de Travelia" class="logo">
+        </a>
+        <input type="checkbox" id="menu-hamburguesa" class="checkbox-oculto">
+        <label for="menu-hamburguesa" class="icono-hamburguesa">â˜°</label>
+        <nav>
+            <ul>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="agencias.html">Agencias</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <h1 class="titulo-vista">Explora nuestros Destinos</h1>
@@ -50,7 +65,7 @@
                     <img src="../assets/img/monaco-beach.jpg" alt="Costas de Monaco">
                     <div class="overlay-info">
                         <h3>Monaco</h3>
-                        <p>Lujo en el Mediterráneo</p>
+                        <p>Lujo en el MediterrÃ¡neo</p>
                     </div>
                 </article>
 
@@ -96,20 +111,33 @@
 
     </main>
 
-    <div id="footer-contenedor"></div>
+    <footer>
+        <div class="footer-newsletter">
+            <h3>Suscribite a nuestro Newsletter</h3>
+            <form action="#" method="post">
+                <label for="email">Recibi las mejores ofertas de viajes:</label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com">
+                <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+        <div class="footer-redes">
+            <h3>Seguinos</h3>
+            <ul>
+                <li><a href="#" target="_blank">Instagram</a></li>
+                <li><a href="#" target="_blank">Facebook</a></li>
+                <li><a href="#" target="_blank">TikTok</a></li>
+            </ul>
+        </div>
+        <div class="footer-mapa">
+            <h3>Nuestra Agencia</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13000!2d-65.3!3d-24.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar "
+                width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" alt="Ubicación de nuestra agencia en Google Maps"></iframe>
+        </div>
+    </footer>
 
 </body>
 
-<script>
-    fetch('../includes/header.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('header-contenedor').innerHTML = html)
-        .catch(error => console.error('Error cargando header:', error));
-
-    fetch('../includes/footer.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('footer-contenedor').innerHTML = html)
-        .catch(error => console.error('Error cargando footer:', error));
-</script>
 
 </html>
