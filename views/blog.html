@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Travelia</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+
+    <div id="header-contenedor"></div>
+
+    <main>
+        <h1 class="titulo-vista">Blog de Viajes</h1>
+
+        <section id="blog-revista">
+
+            <input type="radio" id="tag-todos" name="filtro-blog" checked class="radio-oculto">
+            <input type="radio" id="tag-tips" name="filtro-blog" class="radio-oculto">
+            <input type="radio" id="tag-experiencias" name="filtro-blog" class="radio-oculto">
+
+            <div class="blog-tags">
+                <label for="tag-todos">Todos</label>
+                <label for="tag-tips">Tips de Viaje</label>
+                <label for="tag-experiencias">Experiencias</label>
+            </div>
+
+            <div class="newspaper-grid">
+
+                <article class="post post-tips scroll-reveal">
+                    <img src="/assets/img/japon-tips.jpg" alt="Tren bala en Japon">
+                    <span class="etiqueta">Tips de Viaje</span>
+                    <h2>5 consejos para usar el Japan Rail Pass</h2>
+                    <p>Todo lo que necesitás saber para moverte por Japon de forma rapida y economica en tren bala.</p>
+                    <a href="#" class="leer-mas">Leer artículo completo</a>
+                </article>
+
+                <article class="post post-experiencias scroll-reveal">
+                    <img src="/assets/img/iguazu-aventura.jpg" alt="Paseo en lancha Iguazu">
+                    <span class="etiqueta">Experiencias</span>
+                    <h2>Mi aventura en la Gran Aventura de Iguazu</h2>
+                    <p>Subirse a las lanchas y meterse debajo de las cataratas es una experiencia que te cambia la vida.
+                    </p>
+                    <a href="#" class="leer-mas">Leer articulo completo</a>
+                </article>
+
+                <article class="post post-experiencias scroll-reveal">
+                    <img src="/assets/img/monaco-f1.jpg" alt="Carrera en Monaco">
+                    <span class="etiqueta">Experiencias</span>
+                    <h2>El fin de semana del Grand Prix</h2>
+                    <p>Vivir la adrenalina de la Formula 1 desde las calles del principado de Monaco.</p>
+                    <a href="#" class="leer-mas">Leer artículo completo</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="comentarios-destacados" class="scroll-reveal">
+            <h2>Comentarios de la Comunidad</h2>
+
+            <div class="lista-comentarios">
+
+                <article class="comentario">
+                    <div class="avatar-css" data-iniciales="LP"></div>
+                    <div class="contenido-comentario">
+                        <h4>Laura Pérez</h4>
+                        <time datetime="2026-04-10">10 de Abril, 2026</time>
+                        <p>¡Me sirvieron muchísimo los tips del tren bala! Viajo a Japon el mes que viene y estaba
+                            perdidísima con ese tema.</p>
+                    </div>
+                </article>
+
+                <article class="comentario">
+                    <div class="avatar-css" data-iniciales="MR"></div>
+                    <div class="contenido-comentario">
+                        <h4>Martín Rodríguez</h4>
+                        <time datetime="2026-04-12">12 de Abril, 2026</time>
+                        <p>Totalmente de acuerdo con lo de Iguazu. Lleven ropa para cambiarse porque no queda nada seco,
+                            pero vale cada centavo!</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-contenedor"></div>
+
+</body>
+
+<script>
+    fetch('/includes/header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('header-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando header:', error));
+
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando footer:', error));
+</script>
+
+</html>

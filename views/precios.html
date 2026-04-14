@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - Travelia</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div id="header-contenedor"></div>
+
+    <main>
+        <h1 class="titulo-vista">Comparador de Destinos y Precios</h1>
+
+        <section id="tabla-comparativa">
+            <div class="contenedor-tabla">
+                <table class="tabla-precios">
+                    <thead>
+                        <tr>
+                            <th>Paquete / Destino</th>
+                            <th>Estadía</th>
+                            <th>Precio Base (USD)</th>
+                            <th>Beneficios Extra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cataratas del Iguazú</strong></td>
+                            <td>5 Días / 4 Noches</td>
+                            <td>$450</td>
+                            <td>
+                                <span class="tooltip-css"
+                                    data-tooltip="Incluye acceso ilimitado al Parque Nacional y traslados.">
+                                    ℹ️ Ver detalles
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Japón (Tokio y Kioto)</strong></td>
+                            <td>14 Días / 13 Noches</td>
+                            <td>$3,200</td>
+                            <td>
+                                <span class="tooltip-css"
+                                    data-tooltip="Incluye pase de tren bala (JR Pass) por 7 días.">
+                                    ℹ️ Ver detalles
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Mónaco Grand Prix</strong></td>
+                            <td>7 Días / 6 Noches</td>
+                            <td>$2,800</td>
+                            <td>
+                                <span class="tooltip-css"
+                                    data-tooltip="Acceso a tribuna VIP durante las clasificaciones de F1.">
+                                    ℹ️ Ver detalles
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-contenedor"></div>
+
+</body>
+
+<script>
+    fetch('/includes/header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('header-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando header:', error));
+
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando footer:', error));
+</script>
+
+</html>

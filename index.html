@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelia</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div id="header-contenedor"></div>
+    <main>
+        <section id="hero">
+            <video autoplay muted loop playsinline class="video-fondo">
+                <source src="/assets/videos/japan-1.mp4" type="video/mp4">
+                Tu navegador no soporto el formato de video.
+            </video>
+            <div class="hero-contenido">
+                <h2>Descubri Japon con nosotros</h2>
+                <p> Aventuras inolvidables a un clic de distancia.</p>
+                <button>Explorar Destinos</button>
+            </div>
+        </section>
+
+        <section id="destinos-destacados">
+            <h2>
+                Nuestros Destinos Destacados
+            </h2>
+            <div class="contador">
+                <p>600+ vistas felices</p>
+            </div>
+            <div class="contenedor-cards">
+                <article class="card">
+                    <img src="/assets/img/iguassus-mouth-arg.jpg" alt="Cataratas del Iguazu, maravilla natural">
+                    <h3>Cataratas del Iguazu</h3>
+                    <p>Naturaleza imponente y aventura en una de las maravillas del mundo.</p>
+                    <a href="/views/destinos.html">Ver paquete</a>
+                </article>
+
+                <article class="card">
+                    <img src="/assets/img/edo_tokyo-japan.jpg" alt="Paisaje urbano y tradicional en Japón">
+                    <h3>Japon</h3>
+                    <p>El equilibrio perfecto entre tecnologia futurista y tradiciones milenarias.</p>
+                    <a href="/views/destinos.html">Ver paquete</a>
+                </article>
+
+                <article class="card">
+                    <img src="/assets/img/monaco.jpg" alt="Vista panorámica de Mónaco">
+                    <h3>Monaco</h3>
+                    <p>Lujo en el Mediterraneo y la adrenalina del circuito urbano de automovilismo.</p>
+                    <a href="/views/destinos.html">Ver paquete</a>
+                </article>
+            </div>
+
+        </section>
+        <section id="testimonio">
+            <h2>Lo que dicen nuestros viajeros</h2>
+            <div class="carrusel-testimonios">
+                <article class="testimonio">
+                    <blockquote>
+                        "El viaje a Mónaco fue increíble, superó todas mis expectativas. ¡Pude ver la pista de cerca!"
+                    </blockquote>
+                    <p><strong>- Juan Pérez</strong></p>
+                </article>
+
+                <article class="testimonio">
+                    <blockquote>
+                        "Conocer Japón siempre fue mi sueño y gracias a los guías pude disfrutar cada momento sin
+                        preocuparme por el idioma."
+                    </blockquote>
+                    <p><strong>- María Gómez</strong></p>
+                </article>
+
+                <article class="testimonio">
+                    <blockquote>
+                        "Las Cataratas del Iguazú son majestuosas. El paquete incluyó traslados y el hotel, todo de
+                        diez."
+                    </blockquote>
+                    <p><strong>- Carlos Sánchez</strong></p>
+                </article>
+            </div>
+
+        </section>
+    </main>
+    <div id="footer-contenedor"></div>
+</body>
+
+<script>
+    fetch('/includes/header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('header-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando header:', error));
+
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando footer:', error));
+</script>
+
+</html>

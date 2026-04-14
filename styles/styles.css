@@ -1,0 +1,1134 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+:root {
+    --color-primario: #0084FF;   /* Azul Travelia */
+    --color-secundario: #44AF68; /* Verde Travelia */
+    --color-texto: #333333;      /* Gris oscuro para lectura */
+    --color-fondo: #FFFFFF;      /* Blanco clasico */
+    
+    --fuente-principal: 'Poppins', sans-serif;
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    background-color: var(--color-fondo);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    display: block;
+    height: auto;
+    width: 10rem;
+    padding: 0.5rem;
+    background-color: var(--color-fondo);
+    border-radius: 1rem;
+    border: 1px solid var(--color-primario);
+    box-shadow: 0 6px 15px rgba(0, 132, 255, 0.2);
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+nav a{
+    color: var(--color-texto);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition:all 0.3s ease;
+
+}
+nav a:hover,
+nav a:focus{
+    color: var(--color-primario);
+    border-color: var(--color-primario);
+    background-color: rgba(0, 132, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+
+footer{
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+    padding: 2.5rem 1.5rem;
+
+    /*mis cajas alado*/
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Ocultamos la hamburguesa y el checkbox en monitores de PC */
+.icono-hamburguesa {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-primario);
+}
+
+.checkbox-oculto {
+    display: none;
+}
+
+.footer-newsletter,
+.footer-redes,
+.footer-mapa{
+    flex:1;
+}
+
+.footer-newsletter form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+   
+}
+.footer-newsletter input{
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.4rem;
+    outline: none;
+    font-family: var(--fuente-principal);
+}
+.footer-newsletter input:focus{
+    box-shadow: 0 0 0 2px var(--color-primario);
+}
+.footer-newsletter button{
+    font-family: var(--fuente-principal);
+    padding: 0.8rem;
+    background-color: var(--color-primario);
+    color:var(--color-fondo);
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.footer-newsletter button:hover{
+    background-color: var(--color-secundario);
+}
+.footer-redes h3{
+    margin-bottom: 1rem;
+}
+.footer-redes ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+.footer-redes a{
+    color: var(--color-fondo);
+    font-size: 1rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+.footer-redes a:hover{
+    color: var(--color-primario);
+    padding-left: 0.5rem;
+}
+
+.footer-mapa h3 {
+    margin-bottom: 1rem;
+}
+.footer-mapa iframe{
+    width: 100%;
+    height: 180px;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.footer-mapa iframe:hover{
+    transform: scale(1.02);
+}
+
+/* vista:home */
+/* Seccion hero */
+#hero {
+    position: relative; /* Clave para poder superponer el texto y el video */
+    height: 100vh;      /* Ocupa exactamente el 100% de la altura de tu monitor/celular */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;   /* Esconde cualquier borde del video que sobresalga */
+}
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Hace que el video llene la caja sin deformarse */
+    z-index: -1;        /* Lo manda al fondo, detrás de todo */
+    filter: brightness(0.6); /* Le pone un "lente de sol" para que el texto blanco se lea perfecto */
+}
+.hero-contenido{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--color-fondo);
+    padding: 0 1rem;
+}
+
+.hero-contenido h2{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-contenido p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-contenido button{
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.hero-contenido button:hover{
+    background-color: var(--color-secundario);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(68, 175, 104, 0.4);
+}
+/*Seccion destacados*/
+#destinos-destacados {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9; /* Un fondo apenitas gris para que las tarjetas blancas resalten */
+    text-align: center;
+}
+
+.contador {
+    color: var(--color-secundario);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* El truco mágico de CSS Grid */
+.contenedor-cards {
+    display: grid;
+    /* Esta línea hace que las columnas midan mínimo 250px. Si no entran, bajan solas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 2rem;
+    max-width: 1200px;  /* Evita que se estiren demasiado en monitores gigantes */
+    margin: 0 auto;     /* Centra todo el bloque */
+}
+
+/* La estructura de la tarjeta */
+.card {
+    background-color: var(--color-fondo);
+    border-radius: 0.5rem;
+    overflow: hidden; /* Clave: hace que la foto respete el borde redondeado y no se salga */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Preparamos la micro-interacción que pide el TP */
+}
+
+/* Micro-interacción: Se levanta un poquito al pasar el mouse */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Acomodamos la imagen para que todas midan igual */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Evita que las fotos se aplasten o estiren */
+}
+
+/* Espaciado interno de los textos */
+.card h3 {
+    padding: 1rem 1rem 0.5rem 1rem;
+    text-align: left;
+}
+
+.card p {
+    padding: 0 1rem 1rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.card a {
+    display: inline-block;
+    padding: 0 1rem 1.5rem 1rem;
+    color: var(--color-primario);
+    font-weight: 600;
+    text-align: left;
+}
+/* Seccion testimonio*/
+#testimonio {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#testimonio h2 {
+    margin-bottom: 2rem;
+}
+
+/* La "Ventana" del Carrusel */
+.carrusel-testimonios {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto; /* Permite el scroll horizontal */
+    padding-bottom: 1rem; /* Deja espacio para la barra de scroll en PC */
+    
+    /* Magia del Scroll Snap: obliga a que el scroll frene en puntos exactos */
+    scroll-snap-type: x mandatory; 
+    
+    /* Oculta la barra de scroll fea en algunos navegadores */
+    scrollbar-width: thin;
+}
+
+/* La "Tira de película" (Las tarjetas) */
+.testimonio {
+    /* flex: 0 0 auto; significa que no se estire ni se encoja, que mantenga su tamaño */
+    flex: 0 0 300px; 
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: left;
+    
+    /* Le dice a la tarjeta que cuando frene el scroll, se posicione en el centro */
+    scroll-snap-align: center; 
+}
+
+.testimonio blockquote {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.testimonio p {
+    color: var(--color-secundario); /* Nombre del cliente en Verde Travelia */
+    font-weight: 600;
+}
+.titulo-vista {
+    text-align: center;
+    color: var(--color-primario);
+    padding: 3rem 1rem 1rem 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+/* ==========================================
+   VISTA: DESTINOS (destinos.html)
+   ========================================== */
+
+/* --- 1. EL TRUCO DE LOS FILTROS --- */
+
+/* Ocultamos los "circulitos" de los radios porque quedan feos */
+input[name="categoria"] {
+    display: none;
+}
+
+/* Le damos forma de botones reales a las etiquetas (labels) */
+.botones-filtro {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap; /* Para que en celulares bajen si no entran */
+}
+
+.botones-filtro label {
+    padding: 0.6rem 1.5rem;
+    background-color: #f1f1f1;
+    color: var(--color-texto);
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse por encima del botón */
+.botones-filtro label:hover {
+    background-color: var(--color-secundario); /* Verde Travelia */
+    color: var(--color-fondo);
+}
+
+/* Magia 1: Pinta el botón que está seleccionado */
+#filtro-todos:checked ~ .botones-filtro label[for="filtro-todos"],
+#filtro-cultural:checked ~ .botones-filtro label[for="filtro-cultural"],
+#filtro-naturaleza:checked ~ .botones-filtro label[for="filtro-naturaleza"],
+#filtro-playa:checked ~ .botones-filtro label[for="filtro-playa"] {
+    background-color: var(--color-primario); /* Azul Travelia */
+    color: var(--color-fondo);
+    box-shadow: 0 4px 10px rgba(0, 132, 255, 0.3);
+}
+
+
+/* Magia 2: LÓGICA DE OCULTAR Y MOSTRAR TARJETAS */
+/* Regla general: Si tocamos un filtro específico (que NO sea "Todos"), ocultamos TODAS las tarjetas por defecto */
+#filtro-cultural:checked ~ .grid-masonry .card-destino,
+#filtro-naturaleza:checked ~ .grid-masonry .card-destino,
+#filtro-playa:checked ~ .grid-masonry .card-destino {
+    display: none;
+}
+
+/* Regla específica: Volvemos a mostrar SOLO las que coinciden con el filtro tocado */
+#filtro-cultural:checked ~ .grid-masonry .item-cultural,
+#filtro-naturaleza:checked ~ .grid-masonry .item-naturaleza,
+#filtro-playa:checked ~ .grid-masonry .item-playa {
+    display: block; 
+    animation: aparecer 0.5s ease; /* Le da una entradita suave al filtrarse */
+}
+
+/* Animación para que no aparezcan de golpe */
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* --- 2. GALERÍA MASONRY Y TARJETAS --- */
+
+.grid-masonry {
+    /* Usamos CSS Columns (como en los diarios) para el efecto ladrillo */
+    column-count: 3;
+    column-gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.card-destino {
+    position: relative; /* Clave para superponer el texto negro después */
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    break-inside: avoid; /* Evita que una tarjeta se corte a la mitad entre dos columnas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-destino img {
+    width: 100%;
+    display: block; /* Saca un margen fantasma molesto que traen las imágenes por defecto */
+    transition: transform 0.5s ease;
+}
+
+/* El texto que va por encima de la foto (Overlay) */
+.overlay-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+    color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Lo escondemos totalmente por defecto */
+    transition: opacity 0.3s ease;
+}
+
+/* El efecto al pasar el mouse (Hover) */
+.card-destino:hover img {
+    transform: scale(1.1); /* La foto hace un zoom in sutil */
+}
+
+.card-destino:hover .overlay-info {
+    opacity: 1; /* El texto negro semi-transparente se vuelve visible */
+}
+
+/* ==========================================
+   SECCIÓN: TABLA DE PRECIOS
+   ========================================== */
+#tabla-comparativa {
+    padding: 4rem 2rem;
+    max-width: 1000px;  /* Evita que la tabla se estire de forma exagerada en monitores anchos */
+    margin: 0 auto;     /* Centra todo el bloque en la pantalla */
+    text-align: center;
+}
+
+#tabla-comparativa h2 {
+    margin-bottom: 2rem;
+}
+
+/* El truco responsivo para celulares */
+.contenedor-tabla {
+    width: 100%;
+    overflow-x: auto; /* Magia: Si la tabla es más ancha que la pantalla, crea una barra de scroll interna */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra muy suave para que parezca una tarjeta */
+}
+
+/* Estructura de la tabla en sí */
+.contenedor-tabla table {
+    width: 100%;
+    border-collapse: collapse; /* Borra el espacio feo que traen los bordes por defecto */
+    min-width: 600px; /* Obliga a la tabla a mantener un tamaño legible. Si el celu es chico, activa el scroll del contenedor */
+    text-align: left;
+}
+
+/* Encabezado azul */
+.contenedor-tabla thead {
+    background-color: var(--color-primario); 
+    color: var(--color-fondo);
+}
+
+.contenedor-tabla th, 
+.contenedor-tabla td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #eeeeee; /* Una linea gris muy clarita separando filas */
+}
+
+/* Efecto que pide tu Trabajo Práctico: Resaltar al pasar el mouse */
+.contenedor-tabla tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.contenedor-tabla tbody tr:hover {
+    background-color: rgba(68, 175, 104, 0.1); /* Pinta la fila de un Verde Travelia súper clarito y transparente */
+}
+
+/* ==========================================
+   VISTA: CONTACTO (contactos.html)
+   ========================================== */
+
+#contacto-avanzado {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.contenedor-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-fondo);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Ocultamos el checkbox que hace la magia */
+.checkbox-oculto {
+    display: none;
+}
+
+/* --- 1. DISEÑO DEL FORMULARIO --- */
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.grupo-input label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Validaciones en tiempo real de HTML5 puras con CSS */
+/* Cuando el usuario está escribiendo y el dato es correcto (pinta verde) */
+.grupo-input input:focus:valid,
+.grupo-input textarea:focus:valid {
+    border-color: var(--color-secundario); /* Verde Travelia */
+}
+
+/* Cuando el usuario está escribiendo y el dato está mal (pinta rojo) */
+.grupo-input input:focus:invalid,
+.grupo-input textarea:focus:invalid {
+    border-color: #ff4d4d; 
+}
+
+/* Mensajes de error ocultos por defecto */
+.mensaje-error {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none; /* Lo escondemos */
+}
+
+/* Si el input es inválido Y no esta vacio (para no gritarle al usuario ni bien entra), mostramos el error */
+.grupo-input input:not(:placeholder-shown):invalid ~ .mensaje-error,
+.grupo-input textarea:not(:placeholder-shown):invalid ~ .mensaje-error {
+    display: block;
+    animation: aparecerError 0.3s ease;
+}
+
+@keyframes aparecerError {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón de enviar falso (es un label disfrazado) */
+.btn-enviar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-secundario);
+}
+
+
+/* --- 2. EL MODAL DE CONFIRMACION (Pop-up) --- */
+.modal-confirmacion {
+    position: fixed; /* Lo clava en la pantalla, aunque scrollees */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    /* Por defecto, el modal no se ve y no se puede hacer clic */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.modal-contenido {
+    background-color: var(--color-fondo);
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 400px;
+    transform: scale(0.8); /* Lo achicamos un poco para el efecto de entrada */
+    transition: all 0.4s ease;
+}
+
+.modal-contenido h2 {
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+}
+
+.btn-cerrar-modal {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+/* MAGIA FINAL: Si el checkbox oculto es marcado, aparece el modal */
+#simulador-envio:checked ~ .modal-confirmacion {
+    opacity: 1;
+    visibility: visible;
+}
+
+#simulador-envio:checked ~ .modal-confirmacion .modal-contenido {
+    transform: scale(1); /* Efecto zoom de entrada */
+}
+
+/*   VISTA: BLOG   */
+#blog-revista {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- 1. FILTROS DEL BLOG --- */
+.radio-oculto {
+    display: none;
+}
+
+.blog-tags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.blog-tags label {
+    padding: 0.6rem 1.5rem;
+    background-color: #f1f1f1;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.blog-tags label:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+}
+
+/* Pinta el boton activo */
+#tag-todos:checked ~ .blog-tags label[for="tag-todos"],
+#tag-tips:checked ~ .blog-tags label[for="tag-tips"],
+#tag-experiencias:checked ~ .blog-tags label[for="tag-experiencias"] {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    box-shadow: 0 4px 10px rgba(0, 132, 255, 0.3);
+}
+
+/* Logica de ocultar/mostrar posts */
+#tag-tips:checked ~ .newspaper-grid .post,
+#tag-experiencias:checked ~ .newspaper-grid .post {
+    display: none; /* Oculta todos por defecto al tocar un filtro */
+}
+
+#tag-tips:checked ~ .newspaper-grid .post-tips,
+#tag-experiencias:checked ~ .newspaper-grid .post-experiencias {
+    display: flex; /* Muestra solo los que coinciden */
+    animation: aparecer 0.5s ease;
+}
+
+
+/* --- 2. GRILLA Y TARJETAS (POSTS) --- */
+.newspaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-fondo);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    padding-bottom: 1.5rem; /* Espacio al fondo de la tarjeta */
+}
+
+.post:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.post .etiqueta {
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 1.5rem 0.5rem 1.5rem;
+}
+
+.post h2 {
+    color: var(--color-texto);
+    font-size: 1.4rem;
+    margin: 0 1.5rem 1rem 1.5rem;
+    text-align: left;
+}
+
+.post p {
+    color: #666666;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    flex-grow: 1; /* Empuja el botón de "Leer más" hacia abajo */
+    line-height: 1.6;
+}
+
+.post .leer-mas {
+    margin: 0 1.5rem;
+    color: var(--color-primario);
+    font-weight: 600;
+    margin-top: auto; /* Se clava en el fondo de la tarjeta */
+    transition: color 0.3s ease;
+}
+
+.post .leer-mas:hover {
+    color: var(--color-secundario);
+}
+
+
+/* --- 3. SECCIoN COMENTARIOS --- */
+#comentarios-destacados {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.lista-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.comentario {
+    display: flex;
+    gap: 1.5rem;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    align-items: flex-start; /* Evita que el avatar se estire si el texto es muy largo */
+}
+
+/* El truco del Avatar CSS */
+.avatar-css {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0; /* Evita que el círculo se aplaste */
+}
+
+/* Magia: lee el atributo data-iniciales="LP" del HTML y lo escribe adentro del círculo */
+.avatar-css::before {
+    content: attr(data-iniciales); 
+}
+
+.contenido-comentario h4 {
+    margin-bottom: 0.2rem;
+    color: var(--color-texto);
+}
+
+.contenido-comentario time {
+    font-size: 0.85rem;
+    color: #999999;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+/* ==========================================
+   VISTA: AGENCIAS (agencias.html)
+   ========================================== */
+#agencias-asociadas {
+    padding: 1.5em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-cards-agencias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* --- 1. EL ESCENARIO (La caja exterior) --- */
+.card-agencia-contenedor {
+    background-color: transparent;
+    width: 100%;
+    height: 350px; /* Le damos una altura fija para que la tarjeta no se aplaste */
+    
+    /* MAGIA 1: Esto crea la "cámara" 3D. Mientras más chico el número, más extremo es el efecto */
+    perspective: 1000px; 
+}
+
+/* --- 2. EL EJE GIRATORIO --- */
+.card-agencia-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* Giro suave y moderno */
+    
+    /* MAGIA 2: Le dice a los hijos (las caras) que respeten el entorno 3D */
+    transform-style: preserve-3d; 
+}
+
+/* El gatillo: Cuando pasamos el mouse por la caja, el eje gira 180 grados */
+.card-agencia-contenedor:hover .card-agencia-inner {
+    transform: rotateY(180deg);
+}
+
+/* --- 3. LAS CARAS (Frente y Dorso) --- */
+.card-agencia-front, 
+.card-agencia-back {
+    position: absolute; /* Las superponemos una arriba de la otra */
+    width: 100%;
+    height: 100%;
+    
+    /* MAGIA 3: Esto es vital. Hace que la parte de atrás de un elemento sea invisible */
+    backface-visibility: hidden; 
+    
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Diseño de la cara Frontal */
+.card-agencia-front {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.card-agencia-front img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* Logo redondo */
+    margin-bottom: 1rem;
+    border: 4px solid #f1f1f1;
+}
+
+/* Diseño de la cara Trasera */
+.card-agencia-back {
+    background-color: var(--color-texto); /* Fondo gris oscuro */
+    color: var(--color-fondo);            /* Texto blanco */
+    
+    /* Esta cara ya arranca girada 180 grados, por eso está de espaldas */
+    transform: rotateY(180deg); 
+}
+
+.card-agencia-back h3 {
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.card-agencia-back p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.card-agencia-back button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.card-agencia-back button:hover {
+    background-color: var(--color-secundario);
+}
+
+
+/* --- 4. SISTEMA DE ESTRELLAS INTERACTIVO --- */
+.rating-estrellas {
+    display: flex;
+    /* Truco de diseño: Damos vuelta el orden para que la lógica del CSS fluya de derecha a izquierda */
+    flex-direction: row-reverse; 
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 1rem 0;
+}
+
+.rating-estrellas input {
+    display: none; /* Escondemos los botoncitos redondos del radio */
+}
+
+.rating-estrellas label {
+    font-size: 2rem;
+    color: #666; /* Color de estrella apagada */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* El hack de HTML5 + CSS para pintar las estrellas sin Javascript */
+.rating-estrellas label:hover,
+.rating-estrellas label:hover ~ label,
+.rating-estrellas input:checked ~ label {
+    color: #FFD700; /* Color dorado brillante */
+}
+
+/*  EFECTO TOOLTIP (Para la tabla de precios) */
+.tooltip-css {
+    position: relative;
+    cursor: help; /* Cambia la manito por un signo de pregunta */
+    color: var(--color-primario);
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* El globo negro con el texto */
+.tooltip-css::after {
+    content: attr(data-tooltip); /* MAGIA: Extrae el texto del atributo HTML */
+    position: absolute;
+    bottom: 150%; /* Lo posiciona por encima del texto */
+    left: 50%;
+    transform: translateX(-50%); /* Lo centra perfectamente */
+    background-color: var(--color-texto); /* Gris oscuro */
+    color: var(--color-fondo); /* Letras blancas */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    
+    /* Configuracion de tamaño del globo */
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+/* El "piquito" del globo (el triangulito apuntando abajo) */
+.tooltip-css::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--color-texto) transparent transparent transparent;
+    
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse: Muestra el globo y el piquito */
+.tooltip-css:hover::after,
+.tooltip-css:hover::before {
+    opacity: 1;
+    visibility: visible;
+    bottom: 130%; /* Animacion sutil de movimiento hacia abajo */
+}
+
+
+@media (max-width: 768px) {
+    header{
+        flex-wrap: wrap; 
+        padding: 1rem;
+    }
+    /* 1. Mostramos el icono de las 3 rayitas */
+    .icono-hamburguesa {
+        display: block; 
+    }
+    nav {
+        width: 100%;
+        display: none; 
+        margin-top: 1rem;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    .logo{
+        width: 8rem;
+    }
+    #menu-hamburguesa:checked ~ nav {
+        display: block;
+        animation: deslizarAbajo 0.3s ease; /* Le da un toque profesional */
+    }
+    
+    /* 4. Estilizamos la lista para que parezca un menú de app */
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    nav a {
+        display: block; /* Hace que el botón ocupe todo el ancho para que sea fácil tocarlo con el dedo */
+        padding: 1rem;
+        border-bottom: 1px solid #eeeeee;
+        text-align: center;
+        border-radius: 0; /* Sacamos el borde redondeado para que quede pegado a los costados */
+    }
+
+    /* Animación extra para el despliegue */
+    @keyframes deslizarAbajo {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer{
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+        align-items: center;
+    }
+    .footer-redes ul{
+        justify-content: center;
+    }
+    .footer-mapa {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .footer-mapa iframe {
+        height: 120px; /* En la PC era de 180px, aca lo hacemos más bajito */
+    }
+
+    .hero-contenido h2 {
+        font-size: 2.5rem;
+    }
+    .hero-contenido p {
+        font-size: 1.2rem;
+    }
+    #testimonio {
+        padding: 3rem 1rem; /* Achicamos los espacios laterales para no desperdiciar pantalla */
+    }
+
+    .testimonio {
+        flex: 0 0 85%; /* Ocupa el 85% del ancho, dejando asomar la siguiente tarjeta */
+        /* Al tocar la pantalla, la tarjeta se va a imantar perfectamente en el centro */
+    }
+
+    .grid-masonry {
+        column-count: 1; /* Pasa todo a una sola columna vertical */
+    }
+}

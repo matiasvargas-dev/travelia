@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - Travelia</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div id="header-contenedor"></div>
+
+    <main>
+        <h1 class="titulo-vista">Explora nuestros Destinos</h1>
+
+        <section id="galeria-destinos">
+
+            <input type="radio" id="filtro-todos" name="categoria" checked>
+            <input type="radio" id="filtro-cultural" name="categoria">
+            <input type="radio" id="filtro-naturaleza" name="categoria">
+            <input type="radio" id="filtro-playa" name="categoria">
+
+            <div class="botones-filtro">
+                <label for="filtro-todos">Todos</label>
+                <label for="filtro-cultural">Cultural</label>
+                <label for="filtro-naturaleza">Naturaleza</label>
+                <label for="filtro-playa">Sol y Playa</label>
+            </div>
+
+            <div class="grid-masonry">
+
+                <article class="card-destino item-naturaleza">
+                    <img src="/assets/img/iguazu-selva.jpg" alt="Cataratas del Iguazu">
+                    <div class="overlay-info">
+                        <h3>Cataratas del Iguazu</h3>
+                        <p>Aventura en la selva</p>
+                    </div>
+                </article>
+
+                <article class="card-destino item-cultural">
+                    <img src="/assets/img/japan-templo.jpg" alt="Templos en Japon">
+                    <div class="overlay-info">
+                        <h3>Japon</h3>
+                        <p>Tradicion y futuro</p>
+                    </div>
+                </article>
+
+                <article class="card-destino item-playa">
+                    <img src="/assets/img/monaco-beach.jpg" alt="Costas de Monaco">
+                    <div class="overlay-info">
+                        <h3>Monaco</h3>
+                        <p>Lujo en el Mediterráneo</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="tabla-comparativa">
+            <h2>Comparador de Precios</h2>
+
+            <div class="contenedor-tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destino</th>
+                            <th>Categoria</th>
+                            <th>Duracion</th>
+                            <th>Precio Base (USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cataratas del Iguazu</td>
+                            <td>Naturaleza</td>
+                            <td>5 dias</td>
+                            <td>$450</td>
+                        </tr>
+                        <tr>
+                            <td>Japon</td>
+                            <td>Cultural</td>
+                            <td>14 dias</td>
+                            <td>$3,200</td>
+                        </tr>
+                        <tr>
+                            <td>Monaco</td>
+                            <td>Sol y Playa</td>
+                            <td>7 dias</td>
+                            <td>$2,800</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-contenedor"></div>
+
+</body>
+
+<script>
+    fetch('/includes/header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('header-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando header:', error));
+
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando footer:', error));
+</script>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencias - Travelia</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div id="header-contenedor"></div>
+
+    <main>
+        <h1 class="titulo-vista">Nuestras Agencias Asociadas</h1>
+
+        <section id="agencias-asociadas">
+            <div class="contenedor-cards-agencias">
+
+                <article class="card-agencia-contenedor">
+
+                    <div class="card-agencia-inner">
+
+                        <div class="card-agencia-front">
+                            <img src="/assets/img/logo-agencia1.png" alt="Logo Agencia Viajes Jujuy">
+                            <h3>Viajes del Norte</h3>
+                            <p>Especialistas en turismo aventura y paisajes andinos.</p>
+                        </div>
+
+                        <div class="card-agencia-back">
+                            <h3>Viajes del Norte</h3>
+                            <p>📍 S. S. de Jujuy, Centro</p>
+                            <p>✉️ info@viajesnorte.com</p>
+
+                            <div class="rating-estrellas">
+                                <input type="radio" id="star5-1" name="rate1" value="5">
+                                <label for="star5-1" title="5 estrellas">★</label>
+
+                                <input type="radio" id="star4-1" name="rate1" value="4">
+                                <label for="star4-1" title="4 estrellas">★</label>
+
+                                <input type="radio" id="star3-1" name="rate1" value="3">
+                                <label for="star3-1" title="3 estrellas">★</label>
+
+                                <input type="radio" id="star2-1" name="rate1" value="2">
+                                <label for="star2-1" title="2 estrellas">★</label>
+
+                                <input type="radio" id="star1-1" name="rate1" value="1">
+                                <label for="star1-1" title="1 estrella">★</label>
+                            </div>
+
+                            <button>Contactar Agencia</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+    </main>
+    <div id="footer-contenedor"></div>
+
+</body>
+<script>
+    fetch('/includes/header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('header-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando header:', error));
+
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando footer:', error));
+</script>
+
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Travelia</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div id="header-contenedor"></div>
+
+    <main>
+
+
+        <section id="contacto-avanzado">
+            <h1 class="titulo-vista">Contactate con nosotros</h1>
+            <div class="contenedor-formulario">
+
+                <input type="checkbox" id="simulador-envio" class="checkbox-oculto" aria-hidden="true">
+
+                <form action="#" class="formulario-contacto">
+
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre y Apellido:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan..." required
+                            pattern="[A-Za-z\s]{3,}">
+                        <span class="mensaje-error">Por favor, ingresa un nombre valido (solo letras).</span>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="correo">Correo Electronico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+                        <span class="mensaje-error">Ingresa un correo valido que contenga un @.</span>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="mensaje">Tu Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué te podemos ayudar?" required
+                            minlength="10"></textarea>
+                        <span class="mensaje-error">El mensaje debe tener al menos 10 caracteres.</span>
+                    </div>
+
+                    <div class="grupo-boton">
+                        <label for="simulador-envio" class="btn-enviar">
+                            <span class="texto-btn">Enviar Mensaje</span>
+                            <div class="spinner"></div>
+                        </label>
+                    </div>
+
+                </form>
+
+                <div class="modal-confirmacion">
+                    <div class="modal-contenido">
+                        <h2>Mensaje Enviado con Éxito!</h2>
+                        <p>Gracias por escribirnos. Un asesor se comunicara con vos muy pronto.</p>
+                        <label for="simulador-envio" class="btn-cerrar-modal">Cerrar</label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-contenedor"></div>
+
+</body>
+
+<script>
+    fetch('/includes/header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('header-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando header:', error));
+
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer-contenedor').innerHTML = html)
+        .catch(error => console.error('Error cargando footer:', error));
+</script>
+
+</html>
